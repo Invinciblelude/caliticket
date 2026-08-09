@@ -16,17 +16,24 @@ const STRAINS = [
   "Candy Heart",
   "Candy Runtz",
   "Cherry Runtz",
+  "Chem x OG",
+  "Cotton Candy",
   "Crack Head",
   "Dosido",
   "Espresso Martini",
+  "Fresh Cakes",
   "G33",
+  "Gangster Runtz",
   "Gary Cherry",
   "Gas Nana",
+  "Gelato",
   "Gelato #33 266",
   "GG4 TC1",
   "GG4 TC2",
   "Golden Ticket",
+  "Grape Skittle",
   "Gruntz",
+  "Guava",
   "Honey Runtz",
   "Ice Cream Cake TC1",
   "Illemonati 565",
@@ -45,6 +52,7 @@ const STRAINS = [
   "Madd Fruit",
   "Malted Shake 369",
   "Marmalade",
+  "Mile High Slurpie",
   "Mochi",
   "OBR",
   "Octane",
@@ -52,6 +60,7 @@ const STRAINS = [
   "Pez",
   "Pineapple Glue",
   "Pink Runtz",
+  "Pixie Stix",
   "PM X RS11",
   "Rainbow Runtz 565",
   "RB",
@@ -60,6 +69,7 @@ const STRAINS = [
   "Runtz x Jealousy",
   "Russian Runtz x LCG",
   "Sherpa 369",
+  "Sour Runtz",
   "Sugar Tarts TC1",
   "Toad Venom",
   "WiFi OG",
@@ -132,10 +142,29 @@ const LOT_VIDEOS = [
   { type: "video", src: "media/lots/lot-13.mp4", poster: "media/lots/thumb-lot-13.jpg", label: "Indoor lot" },
 ];
 
+const DEP_PHOTOS = [
+  { type: "image", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },
+  { type: "image", src: "media/dep/mile-high-slurpie/mhs-01.png", label: "Mile High Slurpie" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-01.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-02.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-03.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-04.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-05.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/gangster-runtz/gr-06.png", label: "Gangster Runtz" },
+  { type: "image", src: "media/dep/pixie-stix/ps-01.png", label: "Pixie Stix" },
+  { type: "image", src: "media/dep/pixie-stix/ps-02.png", label: "Pixie Stix" },
+  { type: "image", src: "media/dep/pixie-stix/ps-03.png", label: "Pixie Stix" },
+  { type: "image", src: "media/dep/pixie-stix/ps-04.png", label: "Pixie Stix" },
+];
+
 const MEDIA = [
   { type: "video", src: "media/dep/dep-diesel.mp4", poster: "media/dep/thumb-diesel.jpg", label: "Diesel Dep" },
   { type: "video", src: "media/dep/dep-candy.mp4", poster: "media/dep/thumb-candy.jpg", label: "Candy Dep" },
   { type: "video", src: "media/dep/dep-gas.mp4", poster: "media/dep/thumb-gas.jpg", label: "Gas Dep" },
+  { type: "video", src: "media/dep/dep-guava.mp4", poster: "media/dep/thumb-guava.jpg", label: "Guava Dep" },
+  { type: "video", src: "media/dep/dep-grape-skittle.mp4", poster: "media/dep/thumb-grape-skittle.jpg", label: "Grape Skittle Dep" },
+  { type: "video", src: "media/dep/dep-cotton-candy.mp4", poster: "media/dep/thumb-cotton-candy.jpg", label: "Cotton Candy Dep" },
+  ...DEP_PHOTOS,
   { type: "image", src: "media/light-assist/la-01.png", label: "Light assist" },
   { type: "image", src: "media/light-assist/la-02.png", label: "Light assist" },
   { type: "image", src: "media/light-assist/la-03.png", label: "Light assist" },
@@ -225,6 +254,12 @@ function renderLotVideos() {
   const grid = document.getElementById("lot-video-grid");
   if (!grid) return;
   grid.innerHTML = LOT_VIDEOS.map(renderFigure).join("");
+}
+
+function renderDepPhotos() {
+  const grid = document.getElementById("dep-photo-grid");
+  if (!grid) return;
+  grid.innerHTML = DEP_PHOTOS.map(renderFigure).join("");
 }
 
 function renderMedia() {
@@ -361,6 +396,7 @@ function initGate() {
 initGate();
 renderStrainLists();
 renderLotVideos();
+renderDepPhotos();
 renderLabelVideos();
 renderFlowerMedia();
 renderLabels();
