@@ -503,6 +503,79 @@ button {
   font-weight: 700;
 }
 
+.lane__media figure,
+.media__grid figure {
+  position: relative;
+}
+
+.lane__media img,
+.media__grid img {
+  cursor: zoom-in;
+}
+
+.zoom-btn {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  z-index: 2;
+  border: 0;
+  background: rgba(15, 18, 16, 0.82);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.55rem;
+  cursor: pointer;
+}
+
+.zoom-btn:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(5, 7, 5, 0.92);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+}
+
+.lightbox__stage {
+  width: min(960px, 100%);
+  max-height: min(88vh, 900px);
+}
+
+.lightbox__stage img,
+.lightbox__stage video {
+  width: 100%;
+  max-height: min(88vh, 900px);
+  object-fit: contain;
+  background: #000;
+}
+
 .wa-float {
   position: fixed;
   right: 1rem;
