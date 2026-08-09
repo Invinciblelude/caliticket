@@ -320,6 +320,11 @@ button {
   color: var(--muted);
 }
 
+.lane__note--space {
+  margin-top: 1.35rem;
+}
+
+
 .lane__media {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
