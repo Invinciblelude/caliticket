@@ -259,6 +259,27 @@ button {
   }
 }
 
+/* Notice */
+.notice {
+  padding: 0.95rem clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(214, 255, 75, 0.08);
+}
+
+.notice p {
+  margin: 0;
+  max-width: 52rem;
+  line-height: 1.45;
+  color: rgba(242, 239, 230, 0.9);
+  font-size: 0.95rem;
+}
+
+.notice strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 /* Lanes */
 .lanes {
   padding: clamp(2.2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
