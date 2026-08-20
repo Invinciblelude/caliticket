@@ -222,7 +222,7 @@ function renderStrainLists() {
 function renderFigure(item) {
   if (item.type === "video") {
     return `<figure>
-      <video src="${item.src}" poster="${item.poster || ""}" controls playsinline muted defaultMuted preload="metadata"></video>
+      <video src="${item.src}" poster="${item.poster || ""}" controls playsinline muted defaultMuted preload="none"></video>
       <figcaption>${item.label}</figcaption>
     </figure>`;
   }
@@ -268,7 +268,7 @@ function renderMedia() {
   grid.innerHTML = MEDIA.map((item) => {
     if (item.type === "video") {
       return `<figure>
-        <video src="${item.src}" poster="${item.poster || ""}" controls playsinline muted defaultMuted preload="metadata"></video>
+        <video src="${item.src}" poster="${item.poster || ""}" controls playsinline muted defaultMuted preload="none"></video>
         <figcaption>${item.label}</figcaption>
       </figure>`;
     }
