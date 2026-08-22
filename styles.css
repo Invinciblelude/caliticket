@@ -444,7 +444,8 @@ button {
   appearance: none;
   border: 0;
   background: none;
-  padding: 0;
+  padding: 0.35rem 0;
+  min-height: 44px;
   font: inherit;
   font-weight: 600;
   color: inherit;
@@ -454,6 +455,13 @@ button {
   text-decoration-color: transparent;
   text-underline-offset: 0.15em;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.dep-inventory__table tbody tr[data-strain] {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .inventory-strain:hover,
@@ -483,8 +491,9 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2rem;
-  padding: 0.2rem 0.45rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.35rem 0.55rem;
   border: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.68rem;
@@ -492,6 +501,8 @@ button {
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .inventory-wa:hover {
@@ -505,6 +516,7 @@ button {
   border: 1px solid var(--line);
   background: var(--panel);
   min-height: 280px;
+  scroll-margin-top: 5rem;
 }
 
 .strain-preview__placeholder,
@@ -882,6 +894,21 @@ button {
 
   .strain-preview {
     position: static;
+    scroll-margin-top: 4.5rem;
+  }
+
+  .strain-preview__panel:not([hidden]) {
+    border-top: 3px solid var(--accent);
+  }
+
+  .strain-preview__media:not([hidden]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .strain-preview__wa {
+    min-height: 48px;
+    line-height: 48px;
+    padding: 0 1rem;
   }
 
   .lane__media,
@@ -895,6 +922,36 @@ button {
 }
 
 @media (max-width: 520px) {
+  .dep-inventory__table {
+    min-width: 0;
+  }
+
+  .dep-inventory__table th,
+  .dep-inventory__table td {
+    padding: 0.65rem 0.75rem;
+  }
+
+  .dep-inventory__table tbody td:nth-child(2),
+  .dep-inventory__table tbody td:nth-child(3) {
+    font-size: 0.85rem;
+  }
+
+  .strain-preview__media:not([hidden]) {
+    grid-template-columns: 1fr;
+  }
+
+  .strain-preview__media video {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+  }
+
+  .strain-preview__media img {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: cover;
+  }
+
   .top .btn--small {
     font-size: 0.75rem;
     padding: 0.45rem 0.65rem;

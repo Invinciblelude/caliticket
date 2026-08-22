@@ -378,9 +378,19 @@ function showStrainPreview(previewId, item, mediaMap, getPrice, waSuffix) {
     emptyEl.hidden = false;
   }
 
-  if (window.matchMedia("(max-width: 860px)").matches) {
-    root.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+}
+
+function selectInventoryStrain(body, strain, items, previewId, mediaMap, getPrice, waSuffix) {
+  const item = items.find((entry) => entry.strain === strain);
+  if (!item || !previewId) return;
+
+  body.querySelectorAll("tr[data-strain]").forEach((row) => {
+    row.classList.toggle("is-selected", row.dataset.strain === strain);
+  });
+  showStrainPreview(previewId, item, mediaMap, getPrice, waSuffix);
 }
 
 function bindPreviewFigures(container) {
@@ -455,15 +465,16 @@ function renderInventoryTable(bodyId, items, options = {}) {
     .join("");
 
   body.querySelectorAll(".inventory-strain").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const strain = btn.dataset.strain;
-      const item = sorted.find((entry) => entry.strain === strain);
-      if (!item || !previewId) return;
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      selectInventoryStrain(body, btn.dataset.strain, sorted, previewId, mediaMap, getPrice, waSuffix);
+    });
+  });
 
-      body.querySelectorAll("tr").forEach((row) => {
-        row.classList.toggle("is-selected", row.dataset.strain === strain);
-      });
-      showStrainPreview(previewId, item, mediaMap, getPrice, waSuffix);
+  body.querySelectorAll("tr[data-strain]").forEach((row) => {
+    row.addEventListener("click", (event) => {
+      if (event.target.closest(".inventory-wa")) return;
+      selectInventoryStrain(body, row.dataset.strain, sorted, previewId, mediaMap, getPrice, waSuffix);
     });
   });
 }
