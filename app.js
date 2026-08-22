@@ -1,6 +1,7 @@
 const STRAINS = [
   "ADL",
   "Aries",
+  "Atomic Belts",
   "Black Cherry Gelato",
   "BLU",
   "Blue Andeze",
@@ -15,12 +16,17 @@ const STRAINS = [
   "Candy Gushers",
   "Candy Heart",
   "Candy Runtz",
+  "Cheetah Piss",
   "Cherry Runtz",
   "Chem x OG",
   "Cotton Candy",
   "Crack Head",
+  "Donkey Butter",
   "Dosido",
+  "Dosilato",
+  "Double Runtz",
   "Espresso Martini",
+  "E85",
   "Fresh Cakes",
   "G33",
   "Gangster Runtz",
@@ -30,15 +36,19 @@ const STRAINS = [
   "Gelato #33 266",
   "GG4 TC1",
   "GG4 TC2",
+  "GMO Cookies",
+  "GMO #2",
   "Golden Ticket",
   "Grape Skittle",
   "Gruntz",
   "Guava",
   "Honey Runtz",
   "Ice Cream Cake TC1",
+  "Illumanti",
   "Illemonati 565",
   "Jack Herer",
   "Jungle Gelato",
+  "Kept Secret",
   "Lady Pink",
   "LCG Bx1",
   "LCG x G33",
@@ -54,24 +64,34 @@ const STRAINS = [
   "Marmalade",
   "Mile High Slurpie",
   "Mochi",
+  "Mule Fuel",
   "OBR",
   "Octane",
+  "OG x Sherb x Dosi x FOF #1",
   "Oreoz",
+  "Pack Muel #4",
+  "Papaya Bomb",
+  "Papaya Cake",
   "Pez",
   "Pineapple Glue",
   "Pink Runtz",
   "Pixie Stix",
   "PM X RS11",
+  "Purple Cream",
   "Rainbow Runtz 565",
   "RB",
   "Royal Runtz",
   "Runtz",
   "Runtz x Jealousy",
   "Russian Runtz x LCG",
+  "Sharpie",
   "Sherpa 369",
   "Sour Runtz",
   "Sugar Tarts TC1",
   "Toad Venom",
+  "Tropicana Cherry",
+  "Wedding Cake",
+  "Wedding Cake #2",
   "WiFi OG",
   "Zoap",
   "Ztopia",
@@ -141,6 +161,31 @@ const LOT_VIDEOS = [
   { type: "video", src: "media/lots/lot-12.mp4", poster: "media/lots/thumb-lot-12.jpg", label: "Indoor lot" },
   { type: "video", src: "media/lots/lot-13.mp4", poster: "media/lots/thumb-lot-13.jpg", label: "Indoor lot" },
 ];
+
+const DEP_INVENTORY = [
+  { strain: "Atomic Belts", qty: "Next week", price: "250–500", status: "next" },
+  { strain: "Cheetah Piss", qty: "100", price: "250–500", status: "available" },
+  { strain: "Donkey Butter", qty: "58", price: "250–500", status: "available" },
+  { strain: "Dosilato", qty: "15", price: "250–500", status: "available" },
+  { strain: "Double Runtz", qty: "1", price: "250–500", status: "low" },
+  { strain: "E85", qty: "152", price: "250–500", status: "available" },
+  { strain: "GMO Cookies", qty: "4", price: "250–500", status: "low" },
+  { strain: "GMO #2", qty: "112", price: "250–500", status: "available" },
+  { strain: "Illumanti", qty: "Next week", price: "250–500", status: "next" },
+  { strain: "Kept Secret", qty: "Ask", price: "250–500", status: "ask" },
+  { strain: "Mule Fuel", qty: "11", price: "250–500", status: "available" },
+  { strain: "OG x Sherb x Dosi x FOF #1", qty: "29", price: "250–500", status: "available" },
+  { strain: "Pack Muel #4", qty: "34", price: "250–500", status: "available" },
+  { strain: "Papaya Bomb", qty: "20", price: "250–500", status: "available" },
+  { strain: "Papaya Cake", qty: "122", price: "250–500", status: "available" },
+  { strain: "Purple Cream", qty: "11", price: "250–500", status: "available" },
+  { strain: "Sharpie", qty: "0", price: "250–500", status: "out" },
+  { strain: "Tropicana Cherry", qty: "50", price: "250–500", status: "available" },
+  { strain: "Wedding Cake", qty: "57", price: "250–500", status: "available" },
+  { strain: "Wedding Cake #2", qty: "117", price: "250–500", status: "available" },
+];
+
+const DEP_PRICE_GUIDE = "250–500";
 
 const DEP_PHOTOS = [
   { type: "image", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },
@@ -212,6 +257,51 @@ document.addEventListener("DOMContentLoaded", () => {
   muteAllVideos();
 });
 
+
+function formatDepQty(qty) {
+  if (!qty || qty === "Ask") return "Ask";
+  if (qty === "Next week") return "Next week";
+  if (qty === "0") return "Sold out";
+  return `${qty} lbs`;
+}
+
+function renderDepInventory() {
+  const body = document.getElementById("dep-inventory");
+  if (!body) return;
+
+  const sorted = [...DEP_INVENTORY].sort((a, b) => {
+    const rank = { available: 0, low: 1, next: 2, ask: 3, out: 4 };
+    const diff = (rank[a.status] ?? 5) - (rank[b.status] ?? 5);
+    if (diff !== 0) return diff;
+    const aNum = Number(a.qty);
+    const bNum = Number(b.qty);
+    if (!Number.isNaN(aNum) && !Number.isNaN(bNum)) return bNum - aNum;
+    return a.strain.localeCompare(b.strain);
+  });
+
+  body.innerHTML = sorted
+    .map((item) => {
+      const rowClass =
+        item.status === "out"
+          ? "is-out"
+          : item.status === "next"
+            ? "is-next"
+            : item.status === "low"
+              ? "is-low"
+              : item.status === "ask"
+                ? "is-ask"
+                : "";
+      const waText = encodeURIComponent(`Hi — ${item.strain} dep from Cali Ticket`);
+      return `<tr class="${rowClass}">
+        <th scope="row">
+          <a class="dep-inventory__strain" href="https://wa.me/19165507310?text=${waText}" target="_blank" rel="noopener noreferrer">${item.strain}</a>
+        </th>
+        <td>${formatDepQty(item.qty)}</td>
+        <td>${item.price || DEP_PRICE_GUIDE}</td>
+      </tr>`;
+    })
+    .join("");
+}
 
 function renderStrainLists() {
   const list = document.getElementById("strain-list");
@@ -394,6 +484,7 @@ function initGate() {
 }
 
 initGate();
+renderDepInventory();
 renderStrainLists();
 renderLotVideos();
 renderDepPhotos();
