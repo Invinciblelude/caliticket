@@ -12,13 +12,16 @@ const STRAINS = [
   "Blue Zlushie",
   "Blue Zoup",
   "Bolo Runtz",
+  "Biscotti",
   "Candy Gelato",
   "Candy Gushers",
+  "CG",
   "Candy Heart",
   "Candy Runtz",
   "Cheetah Piss",
   "Cherry Runtz",
   "Chem x OG",
+  "Carbon Fiber",
   "Cotton Candy",
   "Crack Head",
   "Donkey Butter",
@@ -29,6 +32,8 @@ const STRAINS = [
   "E85",
   "Fresh Cakes",
   "G33",
+  "G41",
+  "G45",
   "Gangster Runtz",
   "Gary Cherry",
   "Gas Nana",
@@ -42,9 +47,11 @@ const STRAINS = [
   "Golden Ticket",
   "Grape Skittle",
   "Gruntz",
+  "GSC",
   "Guava",
   "Honey Runtz",
   "Ice Cream Cake TC1",
+  "Ice Cream Cake",
   "Illumanti",
   "Illemonati 565",
   "Jack Herer",
@@ -72,6 +79,7 @@ const STRAINS = [
   "Oreoz",
   "Pack Muel #4",
   "Papaya Bomb",
+  "PP",
   "Papaya Cake",
   "Pez",
   "Pineapple Glue",
@@ -91,8 +99,10 @@ const STRAINS = [
   "Sugar Tarts TC1",
   "Toad Venom",
   "Tropicana Cherry",
+  "Triple Chocolate Chip",
   "Wedding Cake",
   "Wedding Cake #2",
+  "White Runtz",
   "WiFi OG",
   "Zoap",
   "Ztopia",
@@ -163,21 +173,23 @@ const LOT_VIDEOS = [
   { type: "video", src: "media/lots/lot-13.mp4", poster: "media/lots/thumb-lot-13.jpg", label: "Indoor lot" },
 ];
 
-const INDOOR_INVENTORY = [
-  { strain: "Mochi", qty: "100+", price: "300", status: "available" },
-  { strain: "Gel King", qty: "100+", price: "300", status: "available" },
-  { strain: "LCG", qty: "100+", price: "300", status: "available" },
-];
-
-const INDOOR_INVENTORY_PHOTOS = [
-  { type: "image", src: "media/indoor/inventory/mochi.png", label: "Mochi" },
-  { type: "image", src: "media/indoor/inventory/gel-king.png", label: "Gel King" },
-  { type: "image", src: "media/indoor/inventory/lcg.png", label: "LCG" },
-];
-
 const DEP_INVENTORY_PRICE = "350–450";
 
 const DEP_INVENTORY = [
+  { strain: "Mochi", qty: "100+", price: "300", status: "available" },
+  { strain: "Gel King", qty: "100+", price: "300", status: "available" },
+  { strain: "LCG", qty: "100+", price: "300", status: "available" },
+  { strain: "GSC", qty: "100+", price: "325", status: "available" },
+  { strain: "Carbon Fiber", qty: "100+", price: "325", status: "available" },
+  { strain: "Triple Chocolate Chip", qty: "Ask", price: "325", status: "available" },
+  { strain: "Biscotti", qty: "Ask", price: "325", status: "available" },
+  { strain: "G41", qty: "Ask", price: "275", status: "available" },
+  { strain: "Runtz", qty: "200", price: "425", status: "available" },
+  { strain: "PP", qty: "Ask", price: "375", status: "available" },
+  { strain: "Ice Cream Cake", qty: "Ask", price: "375", status: "available" },
+  { strain: "GK", qty: "Ask", price: "375", status: "available" },
+  { strain: "CG", qty: "Ask", price: "375", status: "available" },
+  { strain: "G45", qty: "Ask", price: "275", status: "available" },
   { strain: "Atomic Belts", qty: "Next week", status: "next" },
   { strain: "Cheetah Piss", qty: "100", status: "available" },
   { strain: "Donkey Butter", qty: "58", status: "available" },
@@ -200,7 +212,26 @@ const DEP_INVENTORY = [
   { strain: "Wedding Cake #2", qty: "117", status: "available" },
 ];
 
+const LIGHT_ASSIST_INVENTORY_PRICE = "500–650";
+
+const LIGHT_ASSIST_INVENTORY = [
+  { strain: "White Runtz", qty: "100+", price: "600", status: "available" },
+];
+
+const LIGHT_ASSIST_PHOTOS = [
+  { type: "image", src: "media/light-assist/la-01.png", label: "Light assist" },
+  { type: "image", src: "media/light-assist/la-02.png", label: "Light assist" },
+  { type: "image", src: "media/light-assist/la-03.png", label: "Light assist" },
+  { type: "image", src: "media/light-assist/la-04.png", label: "Light assist" },
+  { type: "image", src: "media/light-assist/la-05.png", label: "Light assist" },
+  { type: "image", src: "media/light-assist/white-runtz.png", label: "White Runtz" },
+];
+
 const DEP_PHOTOS = [
+  { type: "image", src: "media/dep/inventory/mochi.png", label: "Mochi" },
+  { type: "image", src: "media/dep/inventory/gel-king.png", label: "Gel King" },
+  { type: "image", src: "media/dep/inventory/lcg.png", label: "LCG" },
+  { type: "image", src: "media/dep/inventory/runtz.png", label: "Runtz" },
   { type: "image", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },
   { type: "image", src: "media/dep/mile-high-slurpie/mhs-01.png", label: "Mile High Slurpie" },
   { type: "image", src: "media/dep/gangster-runtz/gr-01.png", label: "Gangster Runtz" },
@@ -222,12 +253,19 @@ const MEDIA = [
   { type: "video", src: "media/dep/dep-guava.mp4", poster: "media/dep/thumb-guava.jpg", label: "Guava Dep" },
   { type: "video", src: "media/dep/dep-grape-skittle.mp4", poster: "media/dep/thumb-grape-skittle.jpg", label: "Grape Skittle Dep" },
   { type: "video", src: "media/dep/dep-cotton-candy.mp4", poster: "media/dep/thumb-cotton-candy.jpg", label: "Cotton Candy Dep" },
+  { type: "video", src: "media/dep/dep-gsc.mp4", poster: "media/dep/thumb-gsc.jpg", label: "GSC Dep" },
+  { type: "video", src: "media/dep/dep-carbon-fiber.mp4", poster: "media/dep/thumb-carbon-fiber.jpg", label: "Carbon Fiber Dep" },
+  { type: "video", src: "media/dep/dep-g41.mp4", poster: "media/dep/thumb-g41.jpg", label: "G41 Dep" },
+  { type: "video", src: "media/dep/dep-runtz.mp4", poster: "media/dep/thumb-runtz.jpg", label: "Runtz Dep" },
+  { type: "video", src: "media/dep/dep-g45.mp4", poster: "media/dep/thumb-g45.jpg", label: "G45 Dep" },
+  { type: "video", src: "media/dep/dep-triple-chocolate-chip.mp4", poster: "media/dep/thumb-triple-chocolate-chip.jpg", label: "Triple Chocolate Chip Dep" },
+  { type: "video", src: "media/dep/dep-biscotti.mp4", poster: "media/dep/thumb-biscotti.jpg", label: "Biscotti Dep" },
+  { type: "video", src: "media/dep/dep-pp.mp4", poster: "media/dep/thumb-pp.jpg", label: "PP Dep" },
+  { type: "video", src: "media/dep/dep-ice-cream-cake.mp4", poster: "media/dep/thumb-ice-cream-cake.jpg", label: "Ice Cream Cake Dep" },
+  { type: "video", src: "media/dep/dep-gk.mp4", poster: "media/dep/thumb-gk.jpg", label: "GK Dep" },
+  { type: "video", src: "media/dep/dep-cg.mp4", poster: "media/dep/thumb-cg.jpg", label: "CG Dep" },
   ...DEP_PHOTOS,
-  { type: "image", src: "media/light-assist/la-01.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-02.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-03.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-04.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-05.png", label: "Light assist" },
+  ...LIGHT_ASSIST_PHOTOS,
   { type: "video", src: "media/indoor/lcg-indoor-01.mp4", poster: "media/indoor/thumb-lcg-01.jpg", label: "LCG Indoor" },
   { type: "video", src: "media/indoor/lcg-indoor-02.mp4", poster: "media/indoor/thumb-lcg-02.jpg", label: "LCG Indoor" },
   { type: "video", src: "media/mochi/asian-mochi-01.mp4", poster: "media/mochi/thumb-mochi-01.jpg", label: "Asian Mochi" },
@@ -240,7 +278,6 @@ const MEDIA = [
   ...LOT_VIDEOS,
   ...LABEL_VIDEOS,
   ...FLOWER_MEDIA,
-  ...INDOOR_INVENTORY_PHOTOS,
   { type: "image", src: "media/indoor/in-01.png", label: "Indoor" },
   { type: "image", src: "media/indoor/in-02.png", label: "Indoor" },
   { type: "image", src: "media/indoor/in-03.png", label: "Indoor" },
@@ -322,22 +359,16 @@ function renderInventoryTable(bodyId, items, options = {}) {
 
 function renderDepInventory() {
   renderInventoryTable("dep-inventory", DEP_INVENTORY, {
-    getPrice: () => DEP_INVENTORY_PRICE,
+    getPrice: (item) => item.price ?? DEP_INVENTORY_PRICE,
     waSuffix: "dep from Cali Ticket",
   });
 }
 
-function renderIndoorInventory() {
-  renderInventoryTable("indoor-inventory", INDOOR_INVENTORY, {
-    getPrice: (item) => item.price,
-    waSuffix: "indoor from Cali Ticket",
+function renderLightAssistInventory() {
+  renderInventoryTable("light-assist-inventory", LIGHT_ASSIST_INVENTORY, {
+    getPrice: (item) => item.price ?? LIGHT_ASSIST_INVENTORY_PRICE,
+    waSuffix: "light assist from Cali Ticket",
   });
-}
-
-function renderIndoorInventoryPhotos() {
-  const grid = document.getElementById("indoor-inventory-photos");
-  if (!grid) return;
-  grid.innerHTML = INDOOR_INVENTORY_PHOTOS.map(renderFigure).join("");
 }
 
 function renderStrainLists() {
@@ -387,6 +418,12 @@ function renderDepPhotos() {
   const grid = document.getElementById("dep-photo-grid");
   if (!grid) return;
   grid.innerHTML = DEP_PHOTOS.map(renderFigure).join("");
+}
+
+function renderLightAssistPhotos() {
+  const grid = document.getElementById("light-assist-photo-grid");
+  if (!grid) return;
+  grid.innerHTML = LIGHT_ASSIST_PHOTOS.map(renderFigure).join("");
 }
 
 function renderMedia() {
@@ -522,11 +559,11 @@ function initGate() {
 
 initGate();
 renderDepInventory();
-renderIndoorInventory();
-renderIndoorInventoryPhotos();
+renderLightAssistInventory();
 renderStrainLists();
 renderLotVideos();
 renderDepPhotos();
+renderLightAssistPhotos();
 renderLabelVideos();
 renderFlowerMedia();
 renderLabels();
