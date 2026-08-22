@@ -34,6 +34,7 @@ const STRAINS = [
   "Gas Nana",
   "Gelato",
   "Gelato #33 266",
+  "Gel King",
   "GG4 TC1",
   "GG4 TC2",
   "GMO Cookies",
@@ -162,6 +163,18 @@ const LOT_VIDEOS = [
   { type: "video", src: "media/lots/lot-13.mp4", poster: "media/lots/thumb-lot-13.jpg", label: "Indoor lot" },
 ];
 
+const INDOOR_INVENTORY = [
+  { strain: "Mochi", qty: "100+", price: "300", status: "available" },
+  { strain: "Gel King", qty: "100+", price: "300", status: "available" },
+  { strain: "LCG", qty: "100+", price: "300", status: "available" },
+];
+
+const INDOOR_INVENTORY_PHOTOS = [
+  { type: "image", src: "media/indoor/inventory/mochi.png", label: "Mochi" },
+  { type: "image", src: "media/indoor/inventory/gel-king.png", label: "Gel King" },
+  { type: "image", src: "media/indoor/inventory/lcg.png", label: "LCG" },
+];
+
 const DEP_INVENTORY_PRICE = "350–450";
 
 const DEP_INVENTORY = [
@@ -227,6 +240,7 @@ const MEDIA = [
   ...LOT_VIDEOS,
   ...LABEL_VIDEOS,
   ...FLOWER_MEDIA,
+  ...INDOOR_INVENTORY_PHOTOS,
   { type: "image", src: "media/indoor/in-01.png", label: "Indoor" },
   { type: "image", src: "media/indoor/in-02.png", label: "Indoor" },
   { type: "image", src: "media/indoor/in-03.png", label: "Indoor" },
@@ -258,23 +272,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function formatDepQty(qty) {
+function formatInventoryQty(qty) {
   if (!qty || qty === "Ask") return "Ask";
   if (qty === "Next week") return "Next week";
   if (qty === "0") return "Sold out";
+  if (String(qty).includes("+")) return `${qty} lbs`;
   return `${qty} lbs`;
 }
 
-function renderDepInventory() {
-  const body = document.getElementById("dep-inventory");
+function renderInventoryTable(bodyId, items, options = {}) {
+  const body = document.getElementById(bodyId);
   if (!body) return;
 
-  const sorted = [...DEP_INVENTORY].sort((a, b) => {
+  const { getPrice, waSuffix = "from Cali Ticket" } = options;
+
+  const sorted = [...items].sort((a, b) => {
     const rank = { available: 0, low: 1, next: 2, ask: 3, out: 4 };
     const diff = (rank[a.status] ?? 5) - (rank[b.status] ?? 5);
     if (diff !== 0) return diff;
-    const aNum = Number(a.qty);
-    const bNum = Number(b.qty);
+    const aNum = Number(String(a.qty).replace("+", ""));
+    const bNum = Number(String(b.qty).replace("+", ""));
     if (!Number.isNaN(aNum) && !Number.isNaN(bNum)) return bNum - aNum;
     return a.strain.localeCompare(b.strain);
   });
@@ -291,16 +308,36 @@ function renderDepInventory() {
               : item.status === "ask"
                 ? "is-ask"
                 : "";
-      const waText = encodeURIComponent(`Hi — ${item.strain} dep from Cali Ticket`);
+      const waText = encodeURIComponent(`Hi — ${item.strain} ${waSuffix}`);
       return `<tr class="${rowClass}">
         <th scope="row">
           <a class="dep-inventory__strain" href="https://wa.me/19165507310?text=${waText}" target="_blank" rel="noopener noreferrer">${item.strain}</a>
         </th>
-        <td>${formatDepQty(item.qty)}</td>
-        <td>${DEP_INVENTORY_PRICE}</td>
+        <td>${formatInventoryQty(item.qty)}</td>
+        <td>${getPrice(item)}</td>
       </tr>`;
     })
     .join("");
+}
+
+function renderDepInventory() {
+  renderInventoryTable("dep-inventory", DEP_INVENTORY, {
+    getPrice: () => DEP_INVENTORY_PRICE,
+    waSuffix: "dep from Cali Ticket",
+  });
+}
+
+function renderIndoorInventory() {
+  renderInventoryTable("indoor-inventory", INDOOR_INVENTORY, {
+    getPrice: (item) => item.price,
+    waSuffix: "indoor from Cali Ticket",
+  });
+}
+
+function renderIndoorInventoryPhotos() {
+  const grid = document.getElementById("indoor-inventory-photos");
+  if (!grid) return;
+  grid.innerHTML = INDOOR_INVENTORY_PHOTOS.map(renderFigure).join("");
 }
 
 function renderStrainLists() {
@@ -485,6 +522,8 @@ function initGate() {
 
 initGate();
 renderDepInventory();
+renderIndoorInventory();
+renderIndoorInventoryPhotos();
 renderStrainLists();
 renderLotVideos();
 renderDepPhotos();
