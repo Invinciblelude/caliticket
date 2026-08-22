@@ -163,29 +163,29 @@ const LOT_VIDEOS = [
 ];
 
 const DEP_INVENTORY = [
-  { strain: "Atomic Belts", qty: "Next week", price: "250–500", status: "next" },
-  { strain: "Cheetah Piss", qty: "100", price: "250–500", status: "available" },
-  { strain: "Donkey Butter", qty: "58", price: "250–500", status: "available" },
-  { strain: "Dosilato", qty: "15", price: "250–500", status: "available" },
-  { strain: "Double Runtz", qty: "1", price: "250–500", status: "low" },
-  { strain: "E85", qty: "152", price: "250–500", status: "available" },
-  { strain: "GMO Cookies", qty: "4", price: "250–500", status: "low" },
-  { strain: "GMO #2", qty: "112", price: "250–500", status: "available" },
-  { strain: "Illumanti", qty: "Next week", price: "250–500", status: "next" },
-  { strain: "Kept Secret", qty: "Ask", price: "250–500", status: "ask" },
-  { strain: "Mule Fuel", qty: "11", price: "250–500", status: "available" },
-  { strain: "OG x Sherb x Dosi x FOF #1", qty: "29", price: "250–500", status: "available" },
-  { strain: "Pack Muel #4", qty: "34", price: "250–500", status: "available" },
-  { strain: "Papaya Bomb", qty: "20", price: "250–500", status: "available" },
-  { strain: "Papaya Cake", qty: "122", price: "250–500", status: "available" },
-  { strain: "Purple Cream", qty: "11", price: "250–500", status: "available" },
-  { strain: "Sharpie", qty: "0", price: "250–500", status: "out" },
-  { strain: "Tropicana Cherry", qty: "50", price: "250–500", status: "available" },
-  { strain: "Wedding Cake", qty: "57", price: "250–500", status: "available" },
-  { strain: "Wedding Cake #2", qty: "117", price: "250–500", status: "available" },
+  { strain: "Atomic Belts", qty: "Next week", price: "350–450", status: "next" },
+  { strain: "Cheetah Piss", qty: "100", price: "350–450", status: "available" },
+  { strain: "Donkey Butter", qty: "58", price: "350–450", status: "available" },
+  { strain: "Dosilato", qty: "15", price: "350–450", status: "available" },
+  { strain: "Double Runtz", qty: "1", price: "350–450", status: "low" },
+  { strain: "E85", qty: "152", price: "350–450", status: "available" },
+  { strain: "GMO Cookies", qty: "4", price: "350–450", status: "low" },
+  { strain: "GMO #2", qty: "112", price: "350–450", status: "available" },
+  { strain: "Illumanti", qty: "Next week", price: "350–450", status: "next" },
+  { strain: "Kept Secret", qty: "Ask", price: "350–450", status: "ask" },
+  { strain: "Mule Fuel", qty: "11", price: "350–450", status: "available" },
+  { strain: "OG x Sherb x Dosi x FOF #1", qty: "29", price: "350–450", status: "available" },
+  { strain: "Pack Muel #4", qty: "34", price: "350–450", status: "available" },
+  { strain: "Papaya Bomb", qty: "20", price: "350–450", status: "available" },
+  { strain: "Papaya Cake", qty: "122", price: "350–450", status: "available" },
+  { strain: "Purple Cream", qty: "11", price: "350–450", status: "available" },
+  { strain: "Sharpie", qty: "0", price: "350–450", status: "out" },
+  { strain: "Tropicana Cherry", qty: "50", price: "350–450", status: "available" },
+  { strain: "Wedding Cake", qty: "57", price: "350–450", status: "available" },
+  { strain: "Wedding Cake #2", qty: "117", price: "350–450", status: "available" },
 ];
 
-const DEP_PRICE_GUIDE = "250–500";
+const DEP_PRICE_GUIDE = "350–450";
 
 const DEP_PHOTOS = [
   { type: "image", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },

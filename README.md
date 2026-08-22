@@ -2,7 +2,7 @@
 
 Simple wholesale board:
 
-- **Deps** 250–500
+- **Deps** 350–450
 - **Light assist** 500–650
 - **Indoor** 650–900
 - **Media** gallery
