@@ -218,52 +218,59 @@ const LIGHT_ASSIST_INVENTORY = [
   { strain: "White Runtz", qty: "100+", price: "600", status: "available" },
 ];
 
-const LIGHT_ASSIST_PHOTOS = [
-  { type: "image", src: "media/light-assist/la-01.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-02.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-03.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-04.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/la-05.png", label: "Light assist" },
-  { type: "image", src: "media/light-assist/white-runtz.png", label: "White Runtz" },
+const DEP_VIDEOS = [
+  { type: "video", strain: "Diesel", src: "media/dep/dep-diesel.mp4", poster: "media/dep/thumb-diesel.jpg", label: "Diesel" },
+  { type: "video", strain: "Candy", src: "media/dep/dep-candy.mp4", poster: "media/dep/thumb-candy.jpg", label: "Candy" },
+  { type: "video", strain: "Gas", src: "media/dep/dep-gas.mp4", poster: "media/dep/thumb-gas.jpg", label: "Gas" },
+  { type: "video", strain: "Guava", src: "media/dep/dep-guava.mp4", poster: "media/dep/thumb-guava.jpg", label: "Guava" },
+  { type: "video", strain: "Grape Skittle", src: "media/dep/dep-grape-skittle.mp4", poster: "media/dep/thumb-grape-skittle.jpg", label: "Grape Skittle" },
+  { type: "video", strain: "Cotton Candy", src: "media/dep/dep-cotton-candy.mp4", poster: "media/dep/thumb-cotton-candy.jpg", label: "Cotton Candy" },
+  { type: "video", strain: "GSC", src: "media/dep/dep-gsc.mp4", poster: "media/dep/thumb-gsc.jpg", label: "GSC" },
+  { type: "video", strain: "Carbon Fiber", src: "media/dep/dep-carbon-fiber.mp4", poster: "media/dep/thumb-carbon-fiber.jpg", label: "Carbon Fiber" },
+  { type: "video", strain: "G41", src: "media/dep/dep-g41.mp4", poster: "media/dep/thumb-g41.jpg", label: "G41" },
+  { type: "video", strain: "Runtz", src: "media/dep/dep-runtz.mp4", poster: "media/dep/thumb-runtz.jpg", label: "Runtz" },
+  { type: "video", strain: "G45", src: "media/dep/dep-g45.mp4", poster: "media/dep/thumb-g45.jpg", label: "G45" },
+  { type: "video", strain: "Triple Chocolate Chip", src: "media/dep/dep-triple-chocolate-chip.mp4", poster: "media/dep/thumb-triple-chocolate-chip.jpg", label: "Triple Chocolate Chip" },
+  { type: "video", strain: "Biscotti", src: "media/dep/dep-biscotti.mp4", poster: "media/dep/thumb-biscotti.jpg", label: "Biscotti" },
+  { type: "video", strain: "PP", src: "media/dep/dep-pp.mp4", poster: "media/dep/thumb-pp.jpg", label: "PP" },
+  { type: "video", strain: "Ice Cream Cake", src: "media/dep/dep-ice-cream-cake.mp4", poster: "media/dep/thumb-ice-cream-cake.jpg", label: "Ice Cream Cake" },
+  { type: "video", strain: "GK", src: "media/dep/dep-gk.mp4", poster: "media/dep/thumb-gk.jpg", label: "GK" },
+  { type: "video", strain: "CG", src: "media/dep/dep-cg.mp4", poster: "media/dep/thumb-cg.jpg", label: "CG" },
 ];
 
 const DEP_PHOTOS = [
-  { type: "image", src: "media/dep/inventory/mochi.png", label: "Mochi" },
-  { type: "image", src: "media/dep/inventory/gel-king.png", label: "Gel King" },
-  { type: "image", src: "media/dep/inventory/lcg.png", label: "LCG" },
-  { type: "image", src: "media/dep/inventory/runtz.png", label: "Runtz" },
-  { type: "image", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },
-  { type: "image", src: "media/dep/mile-high-slurpie/mhs-01.png", label: "Mile High Slurpie" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-01.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-02.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-03.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-04.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-05.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/gangster-runtz/gr-06.png", label: "Gangster Runtz" },
-  { type: "image", src: "media/dep/pixie-stix/ps-01.png", label: "Pixie Stix" },
-  { type: "image", src: "media/dep/pixie-stix/ps-02.png", label: "Pixie Stix" },
-  { type: "image", src: "media/dep/pixie-stix/ps-03.png", label: "Pixie Stix" },
-  { type: "image", src: "media/dep/pixie-stix/ps-04.png", label: "Pixie Stix" },
+  { type: "image", strain: "Mochi", src: "media/dep/inventory/mochi.png", label: "Mochi" },
+  { type: "image", strain: "Gel King", src: "media/dep/inventory/gel-king.png", label: "Gel King" },
+  { type: "image", strain: "LCG", src: "media/dep/inventory/lcg.png", label: "LCG" },
+  { type: "image", strain: "Runtz", src: "media/dep/inventory/runtz.png", label: "Runtz" },
+  { type: "image", strain: "Chem x OG", src: "media/dep/chem-x-og/chem-01.png", label: "Chem x OG" },
+  { type: "image", strain: "Mile High Slurpie", src: "media/dep/mile-high-slurpie/mhs-01.png", label: "Mile High Slurpie" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-01.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-02.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-03.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-04.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-05.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Gangster Runtz", src: "media/dep/gangster-runtz/gr-06.png", label: "Gangster Runtz" },
+  { type: "image", strain: "Pixie Stix", src: "media/dep/pixie-stix/ps-01.png", label: "Pixie Stix" },
+  { type: "image", strain: "Pixie Stix", src: "media/dep/pixie-stix/ps-02.png", label: "Pixie Stix" },
+  { type: "image", strain: "Pixie Stix", src: "media/dep/pixie-stix/ps-03.png", label: "Pixie Stix" },
+  { type: "image", strain: "Pixie Stix", src: "media/dep/pixie-stix/ps-04.png", label: "Pixie Stix" },
 ];
 
+const LIGHT_ASSIST_PHOTOS = [
+  { type: "image", strain: "White Runtz", src: "media/light-assist/white-runtz.png", label: "White Runtz" },
+  { type: "image", strain: "White Runtz", src: "media/light-assist/la-01.png", label: "Light assist" },
+  { type: "image", strain: "White Runtz", src: "media/light-assist/la-02.png", label: "Light assist" },
+  { type: "image", strain: "White Runtz", src: "media/light-assist/la-03.png", label: "Light assist" },
+  { type: "image", strain: "White Runtz", src: "media/light-assist/la-04.png", label: "Light assist" },
+  { type: "image", strain: "White Runtz", src: "media/light-assist/la-05.png", label: "Light assist" },
+];
+
+const DEP_STRAIN_MEDIA = buildStrainMediaMap([...DEP_VIDEOS, ...DEP_PHOTOS]);
+const LIGHT_ASSIST_STRAIN_MEDIA = buildStrainMediaMap(LIGHT_ASSIST_PHOTOS);
+
 const MEDIA = [
-  { type: "video", src: "media/dep/dep-diesel.mp4", poster: "media/dep/thumb-diesel.jpg", label: "Diesel Dep" },
-  { type: "video", src: "media/dep/dep-candy.mp4", poster: "media/dep/thumb-candy.jpg", label: "Candy Dep" },
-  { type: "video", src: "media/dep/dep-gas.mp4", poster: "media/dep/thumb-gas.jpg", label: "Gas Dep" },
-  { type: "video", src: "media/dep/dep-guava.mp4", poster: "media/dep/thumb-guava.jpg", label: "Guava Dep" },
-  { type: "video", src: "media/dep/dep-grape-skittle.mp4", poster: "media/dep/thumb-grape-skittle.jpg", label: "Grape Skittle Dep" },
-  { type: "video", src: "media/dep/dep-cotton-candy.mp4", poster: "media/dep/thumb-cotton-candy.jpg", label: "Cotton Candy Dep" },
-  { type: "video", src: "media/dep/dep-gsc.mp4", poster: "media/dep/thumb-gsc.jpg", label: "GSC Dep" },
-  { type: "video", src: "media/dep/dep-carbon-fiber.mp4", poster: "media/dep/thumb-carbon-fiber.jpg", label: "Carbon Fiber Dep" },
-  { type: "video", src: "media/dep/dep-g41.mp4", poster: "media/dep/thumb-g41.jpg", label: "G41 Dep" },
-  { type: "video", src: "media/dep/dep-runtz.mp4", poster: "media/dep/thumb-runtz.jpg", label: "Runtz Dep" },
-  { type: "video", src: "media/dep/dep-g45.mp4", poster: "media/dep/thumb-g45.jpg", label: "G45 Dep" },
-  { type: "video", src: "media/dep/dep-triple-chocolate-chip.mp4", poster: "media/dep/thumb-triple-chocolate-chip.jpg", label: "Triple Chocolate Chip Dep" },
-  { type: "video", src: "media/dep/dep-biscotti.mp4", poster: "media/dep/thumb-biscotti.jpg", label: "Biscotti Dep" },
-  { type: "video", src: "media/dep/dep-pp.mp4", poster: "media/dep/thumb-pp.jpg", label: "PP Dep" },
-  { type: "video", src: "media/dep/dep-ice-cream-cake.mp4", poster: "media/dep/thumb-ice-cream-cake.jpg", label: "Ice Cream Cake Dep" },
-  { type: "video", src: "media/dep/dep-gk.mp4", poster: "media/dep/thumb-gk.jpg", label: "GK Dep" },
-  { type: "video", src: "media/dep/dep-cg.mp4", poster: "media/dep/thumb-cg.jpg", label: "CG Dep" },
+  ...DEP_VIDEOS,
   ...DEP_PHOTOS,
   ...LIGHT_ASSIST_PHOTOS,
   { type: "video", src: "media/indoor/lcg-indoor-01.mp4", poster: "media/indoor/thumb-lcg-01.jpg", label: "LCG Indoor" },
@@ -317,11 +324,98 @@ function formatInventoryQty(qty) {
   return `${qty} lbs`;
 }
 
+function buildStrainMediaMap(items) {
+  const map = {};
+  items.forEach((item) => {
+    const key = item.strain || item.label;
+    if (!key) return;
+    if (!map[key]) map[key] = [];
+    map[key].push(item);
+  });
+  return map;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function showStrainPreview(previewId, item, mediaMap, getPrice, waSuffix) {
+  const root = document.getElementById(previewId);
+  if (!root || !item) return;
+
+  const placeholder = root.querySelector(".strain-preview__placeholder");
+  const panel = root.querySelector(".strain-preview__panel");
+  const nameEl = root.querySelector(".strain-preview__name");
+  const metaEl = root.querySelector(".strain-preview__meta");
+  const mediaEl = root.querySelector(".strain-preview__media");
+  const emptyEl = root.querySelector(".strain-preview__empty");
+  const waEl = root.querySelector(".strain-preview__wa");
+  if (!placeholder || !panel || !nameEl || !metaEl || !mediaEl || !emptyEl || !waEl) return;
+
+  const media = mediaMap[item.strain] || [];
+  const price = getPrice(item);
+  const waText = encodeURIComponent(`Hi — ${item.strain} ${waSuffix}`);
+
+  placeholder.hidden = true;
+  panel.hidden = false;
+  nameEl.textContent = item.strain;
+  metaEl.textContent = `${formatInventoryQty(item.qty)} · ${price}`;
+  waEl.href = `https://wa.me/19165507310?text=${waText}`;
+
+  if (media.length) {
+    emptyEl.hidden = true;
+    mediaEl.hidden = false;
+    mediaEl.innerHTML = media.map(renderFigure).join("");
+    muteAllVideos();
+    bindPreviewFigures(mediaEl);
+  } else {
+    mediaEl.hidden = true;
+    mediaEl.innerHTML = "";
+    emptyEl.hidden = false;
+  }
+
+  if (window.matchMedia("(max-width: 860px)").matches) {
+    root.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+}
+
+function bindPreviewFigures(container) {
+  container.querySelectorAll("figure").forEach((figure) => {
+    if (figure.dataset.zoomBound === "1") return;
+    figure.dataset.zoomBound = "1";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "zoom-btn";
+    btn.textContent = "Enlarge";
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openLightbox(figure);
+    });
+    figure.appendChild(btn);
+
+    const img = figure.querySelector("img");
+    if (img) {
+      img.addEventListener("click", () => openLightbox(figure));
+    }
+  });
+}
+
 function renderInventoryTable(bodyId, items, options = {}) {
   const body = document.getElementById(bodyId);
   if (!body) return;
 
-  const { getPrice, waSuffix = "from Cali Ticket" } = options;
+  const {
+    getPrice,
+    waSuffix = "from Cali Ticket",
+    mediaMap = {},
+    previewId,
+  } = options;
 
   const sorted = [...items].sort((a, b) => {
     const rank = { available: 0, low: 1, next: 2, ask: 3, out: 4 };
@@ -346,21 +440,40 @@ function renderInventoryTable(bodyId, items, options = {}) {
                 ? "is-ask"
                 : "";
       const waText = encodeURIComponent(`Hi — ${item.strain} ${waSuffix}`);
-      return `<tr class="${rowClass}">
+      const hasMedia = Boolean(mediaMap[item.strain]?.length);
+      return `<tr class="${rowClass}" data-strain="${escapeHtml(item.strain)}">
         <th scope="row">
-          <a class="dep-inventory__strain" href="https://wa.me/19165507310?text=${waText}" target="_blank" rel="noopener noreferrer">${item.strain}</a>
+          <button type="button" class="inventory-strain${hasMedia ? " inventory-strain--has-media" : ""}" data-strain="${escapeHtml(item.strain)}">${escapeHtml(item.strain)}</button>
         </th>
         <td>${formatInventoryQty(item.qty)}</td>
         <td>${getPrice(item)}</td>
+        <td>
+          <a class="inventory-wa" href="https://wa.me/19165507310?text=${waText}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ${escapeHtml(item.strain)}">WA</a>
+        </td>
       </tr>`;
     })
     .join("");
+
+  body.querySelectorAll(".inventory-strain").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const strain = btn.dataset.strain;
+      const item = sorted.find((entry) => entry.strain === strain);
+      if (!item || !previewId) return;
+
+      body.querySelectorAll("tr").forEach((row) => {
+        row.classList.toggle("is-selected", row.dataset.strain === strain);
+      });
+      showStrainPreview(previewId, item, mediaMap, getPrice, waSuffix);
+    });
+  });
 }
 
 function renderDepInventory() {
   renderInventoryTable("dep-inventory", DEP_INVENTORY, {
     getPrice: (item) => item.price ?? DEP_INVENTORY_PRICE,
     waSuffix: "dep from Cali Ticket",
+    mediaMap: DEP_STRAIN_MEDIA,
+    previewId: "dep-strain-preview",
   });
 }
 
@@ -368,6 +481,8 @@ function renderLightAssistInventory() {
   renderInventoryTable("light-assist-inventory", LIGHT_ASSIST_INVENTORY, {
     getPrice: (item) => item.price ?? LIGHT_ASSIST_INVENTORY_PRICE,
     waSuffix: "light assist from Cali Ticket",
+    mediaMap: LIGHT_ASSIST_STRAIN_MEDIA,
+    previewId: "light-assist-strain-preview",
   });
 }
 
@@ -412,18 +527,6 @@ function renderLotVideos() {
   const grid = document.getElementById("lot-video-grid");
   if (!grid) return;
   grid.innerHTML = LOT_VIDEOS.map(renderFigure).join("");
-}
-
-function renderDepPhotos() {
-  const grid = document.getElementById("dep-photo-grid");
-  if (!grid) return;
-  grid.innerHTML = DEP_PHOTOS.map(renderFigure).join("");
-}
-
-function renderLightAssistPhotos() {
-  const grid = document.getElementById("light-assist-photo-grid");
-  if (!grid) return;
-  grid.innerHTML = LIGHT_ASSIST_PHOTOS.map(renderFigure).join("");
 }
 
 function renderMedia() {
@@ -514,7 +617,7 @@ function initLightbox() {
   }
 
   document
-    .querySelectorAll(".lane__media figure, .media__grid figure")
+    .querySelectorAll(".lane__media figure, .media__grid figure, .strain-preview__media figure")
     .forEach((figure) => {
       if (figure.dataset.zoomBound === "1") return;
       figure.dataset.zoomBound = "1";
@@ -562,8 +665,6 @@ renderDepInventory();
 renderLightAssistInventory();
 renderStrainLists();
 renderLotVideos();
-renderDepPhotos();
-renderLightAssistPhotos();
 renderLabelVideos();
 renderFlowerMedia();
 renderLabels();

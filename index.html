@@ -95,237 +95,46 @@
             <p class="range">250 – 500</p>
           </div>
           <p class="lane__note">
-            Live dep inventory below · range guide · market / production dependent
+            Tap a strain for photos &amp; video · WhatsApp to confirm before you roll
           </p>
-          <div class="dep-inventory">
-            <div class="dep-inventory__head">
-              <h3>Available deps</h3>
-              <p>Strain · qty · price guide — WhatsApp to confirm before you roll</p>
+          <div class="inventory-hub">
+            <div class="inventory-hub__list">
+              <div class="dep-inventory">
+                <div class="dep-inventory__head">
+                  <h3>Available deps</h3>
+                  <p>Strain · qty · price</p>
+                </div>
+                <div class="dep-inventory__wrap">
+                  <table class="dep-inventory__table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Strain</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"><span class="sr-only">WhatsApp</span></th>
+                      </tr>
+                    </thead>
+                    <tbody id="dep-inventory"></tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div class="dep-inventory__wrap">
-              <table class="dep-inventory__table">
-                <thead>
-                  <tr>
-                    <th scope="col">Strain</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody id="dep-inventory"></tbody>
-              </table>
+            <div class="strain-preview" id="dep-strain-preview" aria-live="polite">
+              <div class="strain-preview__placeholder">
+                <p class="strain-preview__title">Select a strain</p>
+                <p class="strain-preview__hint">Tap any strain in the list to view photos &amp; video</p>
+              </div>
+              <div class="strain-preview__panel" hidden>
+                <div class="strain-preview__head">
+                  <h3 class="strain-preview__name"></h3>
+                  <p class="strain-preview__meta"></p>
+                </div>
+                <div class="strain-preview__media lane__media"></div>
+                <p class="strain-preview__empty" hidden>No media yet for this strain — WhatsApp to ask.</p>
+                <a class="strain-preview__wa btn btn--wa" target="_blank" rel="noopener noreferrer">WhatsApp this strain</a>
+              </div>
             </div>
           </div>
-          <p class="lane__note lane__note--space">Dep video &amp; photos</p>
-          <div class="lane__media">
-            <figure>
-              <video
-                src="media/dep/dep-diesel.mp4"
-                poster="media/dep/thumb-diesel.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Diesel Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-candy.mp4"
-                poster="media/dep/thumb-candy.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Candy Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-gas.mp4"
-                poster="media/dep/thumb-gas.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Gas Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-guava.mp4"
-                poster="media/dep/thumb-guava.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Guava Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-grape-skittle.mp4"
-                poster="media/dep/thumb-grape-skittle.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Grape Skittle Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-cotton-candy.mp4"
-                poster="media/dep/thumb-cotton-candy.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Cotton Candy Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-gsc.mp4"
-                poster="media/dep/thumb-gsc.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>GSC Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-carbon-fiber.mp4"
-                poster="media/dep/thumb-carbon-fiber.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Carbon Fiber Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-g41.mp4"
-                poster="media/dep/thumb-g41.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>G41 Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-runtz.mp4"
-                poster="media/dep/thumb-runtz.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Runtz Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-g45.mp4"
-                poster="media/dep/thumb-g45.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>G45 Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-triple-chocolate-chip.mp4"
-                poster="media/dep/thumb-triple-chocolate-chip.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Triple Chocolate Chip Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-biscotti.mp4"
-                poster="media/dep/thumb-biscotti.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Biscotti Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-pp.mp4"
-                poster="media/dep/thumb-pp.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>PP Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-ice-cream-cake.mp4"
-                poster="media/dep/thumb-ice-cream-cake.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>Ice Cream Cake Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-gk.mp4"
-                poster="media/dep/thumb-gk.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>GK Dep</figcaption>
-            </figure>
-            <figure>
-              <video
-                src="media/dep/dep-cg.mp4"
-                poster="media/dep/thumb-cg.jpg"
-                controls
-                playsinline
-                muted
-                defaultMuted
-                preload="none"
-              ></video>
-              <figcaption>CG Dep</figcaption>
-            </figure>
-          </div>
-          <p class="lane__note lane__note--space">
-            Chem x OG · Mile High Slurpie · Gangster Runtz · Pixie Stix
-          </p>
-          <div class="lane__media lane__media--photos" id="dep-photo-grid"></div>
         </div>
       </section>
 
@@ -336,27 +145,46 @@
             <p class="range">500 – 650</p>
           </div>
           <p class="lane__note">
-            Live light assist inventory below · range guide · market / production dependent
+            Tap a strain for photos &amp; video · range guide · market / production dependent
           </p>
-          <div class="dep-inventory">
-            <div class="dep-inventory__head">
-              <h3>Available light assist</h3>
-              <p>Strain · qty · price — WhatsApp to confirm before you roll</p>
+          <div class="inventory-hub">
+            <div class="inventory-hub__list">
+              <div class="dep-inventory">
+                <div class="dep-inventory__head">
+                  <h3>Available light assist</h3>
+                  <p>Strain · qty · price</p>
+                </div>
+                <div class="dep-inventory__wrap">
+                  <table class="dep-inventory__table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Strain</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"><span class="sr-only">WhatsApp</span></th>
+                      </tr>
+                    </thead>
+                    <tbody id="light-assist-inventory"></tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div class="dep-inventory__wrap">
-              <table class="dep-inventory__table">
-                <thead>
-                  <tr>
-                    <th scope="col">Strain</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody id="light-assist-inventory"></tbody>
-              </table>
+            <div class="strain-preview" id="light-assist-strain-preview" aria-live="polite">
+              <div class="strain-preview__placeholder">
+                <p class="strain-preview__title">Select a strain</p>
+                <p class="strain-preview__hint">Tap any strain in the list to view photos &amp; video</p>
+              </div>
+              <div class="strain-preview__panel" hidden>
+                <div class="strain-preview__head">
+                  <h3 class="strain-preview__name"></h3>
+                  <p class="strain-preview__meta"></p>
+                </div>
+                <div class="strain-preview__media lane__media"></div>
+                <p class="strain-preview__empty" hidden>No media yet for this strain — WhatsApp to ask.</p>
+                <a class="strain-preview__wa btn btn--wa" target="_blank" rel="noopener noreferrer">WhatsApp this strain</a>
+              </div>
             </div>
           </div>
-          <div class="lane__media lane__media--photos" id="light-assist-photo-grid"></div>
         </div>
       </section>
 
